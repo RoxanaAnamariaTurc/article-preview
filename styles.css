@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", serif;
+}
+body {
+  background-color: hsl(210, 46%, 95%);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.article-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 760px;
+  height: auto;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.img-container {
+  width: 100%;
+  height: 100%;
+}
+.img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.details-container p {
+  font-size: 13px;
+  color: hsl(217, 19%, 35%);
+}
+
+.article-description {
+  padding: 24px;
+  /* width: 100%;
+  height: 100%; */
+}
+
+h3 {
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 15px;
+}
+
+.user-details {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+
+.user-details img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details-text {
+  margin-right: auto;
+  font-size: 13px;
+}
+
+#user-name {
+  font-weight: 600;
+  color: hsl(217, 19%, 35%);
+}
+
+#date {
+  color: hsl(214, 17%, 51%);
+}
+
+#share {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#share img {
+  width: 50%;
+  height: 50%;
+}
+
+#share:hover {
+  background-color: hsl(217, 19%, 35%);
+  cursor: pointer;
+}
+
+#share:hover img {
+  filter: invert(1);
+}
+
+.tooltip {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 48px;
+  padding: 5px;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 8px;
+  position: absolute;
+  top: 415px;
+  left: 72.5%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.hidden {
+  display: none;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Adjusts arrow position */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid hsl(217, 19%, 35%);
+}
+
+.tooltip p {
+  color: hsl(214, 17%, 51%);
+  font-size: 13px;
+}
+
+.tooltip img {
+  width: 10%;
+  height: 50%;
+}
+@media (max-width: 600px) {
+  .tooltip {
+    position: fixed; /* Pin the tooltip to the bottom of the screen */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width like a footer */
+    height: 60px; /* Taller for better visibility */
+    border-radius: 0; /* No rounded corners */
+    justify-content: space-around; /* Distribute content evenly */
+    align-items: center; /* Center content vertically */
+    background-color: hsl(217, 19%, 35%);
+  }
+
+  .tooltip::after {
+    content: none; /* Remove the arrow for the footer */
+  }
+}
